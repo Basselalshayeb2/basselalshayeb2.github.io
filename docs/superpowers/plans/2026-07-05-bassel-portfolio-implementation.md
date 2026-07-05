@@ -20,7 +20,7 @@
 - Create `src/styles/global.css`: Tailwind imports, design tokens, base styles, focus states, responsive helpers, motion, and print-safe defaults.
 - Create `src/pages/index.astro`: full one-page portfolio, typed content arrays, SEO metadata, links, and semantic sections.
 - Copy `Bassel_Alshayeb_CV_EN.pdf` to `public/Bassel_Alshayeb_CV_EN.pdf`.
-- Copy `Альшаеб_Басель_CV_RU.pdf` to `public/Альшаеб_Басель_CV_RU.pdf`.
+- Copy `Bassel_Alshayeb_CV_RU.pdf` to `public/Bassel_Alshayeb_CV_RU.pdf`.
 - Create `.github/workflows/deploy.yml`: optional GitHub Pages Actions deployment workflow.
 - Create `.gitignore`: Node, build output, local Astro, and `.superpowers/` companion artifacts.
 - Create `README.md`: setup, local commands, GitHub Pages deployment commands, and URL/base notes.
@@ -129,7 +129,7 @@ Expected initially: fails because `src/pages/index.astro` does not exist yet. Th
 
 **Files:**
 - Create: `public/Bassel_Alshayeb_CV_EN.pdf`
-- Create: `public/Альшаеб_Басель_CV_RU.pdf`
+- Create: `public/Bassel_Alshayeb_CV_RU.pdf`
 
 - [ ] **Step 1: Create public directory and copy PDFs**
 
@@ -138,7 +138,7 @@ Run:
 ```powershell
 New-Item -ItemType Directory -Force -Path public
 Copy-Item -LiteralPath 'Bassel_Alshayeb_CV_EN.pdf' -Destination 'public\Bassel_Alshayeb_CV_EN.pdf' -Force
-Copy-Item -LiteralPath 'Альшаеб_Басель_CV_RU.pdf' -Destination 'public\Альшаеб_Басель_CV_RU.pdf' -Force
+Copy-Item -LiteralPath 'Bassel_Alshayeb_CV_RU.pdf' -Destination 'public\Bassel_Alshayeb_CV_RU.pdf' -Force
 ```
 
 Expected: both PDFs exist under `public/` with non-zero file sizes.
@@ -151,7 +151,7 @@ Run:
 Get-ChildItem -LiteralPath public -Filter *.pdf | Select-Object Name,Length
 ```
 
-Expected: `Bassel_Alshayeb_CV_EN.pdf` and `Альшаеб_Басель_CV_RU.pdf` are listed.
+Expected: `Bassel_Alshayeb_CV_EN.pdf` and `Bassel_Alshayeb_CV_RU.pdf` are listed.
 
 ## Task 3: Implement Global Design System
 
@@ -326,7 +326,7 @@ type SkillGroup = {
 
 const links: LinkItem[] = [
   { label: 'Download CV EN', href: '/Bassel_Alshayeb_CV_EN.pdf', download: 'Bassel_Alshayeb_CV_EN.pdf' },
-  { label: 'Download CV RU', href: '/Альшаеб_Басель_CV_RU.pdf', download: 'Альшаеб_Басель_CV_RU.pdf' },
+  { label: 'Download CV RU', href: '/Bassel_Alshayeb_CV_RU.pdf', download: 'Bassel_Alshayeb_CV_RU.pdf' },
   { label: 'GitHub', href: 'https://github.com/Basselalshayeb2', external: true },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/bassel-alshayeb', external: true },
   { label: 'Telegram', href: 'https://t.me/bassel_alshayeb', external: true }
@@ -781,7 +781,7 @@ Open the local URL at a mobile viewport around `390x844`. Confirm:
 Check these links:
 
 - `/mywebsite/Bassel_Alshayeb_CV_EN.pdf`
-- `/mywebsite/Альшаеб_Басель_CV_RU.pdf`
+- `/mywebsite/Bassel_Alshayeb_CV_RU.pdf`
 - `https://github.com/Basselalshayeb2`
 - `https://www.linkedin.com/in/bassel-alshayeb`
 - `https://t.me/bassel_alshayeb`

@@ -9,7 +9,7 @@ Build a one-page English portfolio website for Bassel Alshayeb using Astro, Type
 The two CV PDFs in the project root are the source of truth:
 
 - `Bassel_Alshayeb_CV_EN.pdf`
-- `Альшаеб_Басель_CV_RU.pdf`
+- `Bassel_Alshayeb_CV_RU.pdf`
 
 ## Content Positioning
 
@@ -126,7 +126,7 @@ Expected file structure:
 - `src/pages/index.astro` for the one-page portfolio.
 - `src/styles/global.css` for Tailwind imports and custom base styles.
 - `public/Bassel_Alshayeb_CV_EN.pdf`
-- `public/Альшаеб_Басель_CV_RU.pdf`
+- `public/Bassel_Alshayeb_CV_RU.pdf`
 - `README.md` with GitHub Pages deployment instructions.
 
 Use static output suitable for GitHub Pages. Include SEO and Open Graph metadata:
