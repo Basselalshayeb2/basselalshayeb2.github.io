@@ -45,6 +45,8 @@ If the repository name changes, update `base` to `/<repo-name>`. If deploying as
 
 ### Deploy With GitHub Actions
 
+The workflow uses Astro's official `withastro/action@v6` on Node `24`, then publishes with `actions/deploy-pages@v5`.
+
 1. Create a GitHub repository named `mywebsite`.
 2. Push this project to the `main` branch.
 3. In GitHub, open Settings -> Pages.
