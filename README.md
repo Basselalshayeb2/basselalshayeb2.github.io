@@ -4,7 +4,10 @@ Personal portfolio website for Bassel Alshayeb, built with Astro, TypeScript, an
 
 ## Local Development
 
+Astro requires Node.js `>=22.12.0`. This repo includes `.nvmrc` for Node `22.12.0`.
+
 ```powershell
+nvm use 22.12.0
 npm install
 npm run dev
 ```
