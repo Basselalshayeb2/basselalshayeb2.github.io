@@ -1,0 +1,316 @@
+---
+import '../styles/global.css';
+
+const siteUrl = 'https://basselalshayeb2.github.io/mywebsite/';
+const pageTitle = 'Bassel Alshayeb - Senior Backend Engineer';
+const pageDescription =
+  'Senior Backend / Backend-heavy Fullstack Engineer with 6+ years across GovTech, iGaming, FinTech, POS/SaaS, IoT, microservices, and AI clinical systems.';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const withBase = (path: string) => `${baseUrl}${path.replace(/^\/+/, '')}`;
+const heroImage = withBase('systems-ledger-hero.png');
+const ogImage = `${siteUrl}systems-ledger-hero.png`;
+
+type LinkItem = {
+  label: string;
+  href: string;
+  download?: boolean | string;
+  external?: boolean;
+};
+
+type Metric = {
+  value: string;
+  label: string;
+  detail: string;
+};
+
+type Experience = {
+  company: string;
+  role: string;
+  period: string;
+  summary: string;
+  stack: string;
+};
+
+type SkillGroup = {
+  title: string;
+  items: string[];
+};
+
+const links: LinkItem[] = [
+  { label: 'Download CV EN', href: withBase('Bassel_Alshayeb_CV_EN.pdf'), download: 'Bassel_Alshayeb_CV_EN.pdf' },
+  { label: 'Download CV RU', href: withBase('Альшаеб_Басель_CV_RU.pdf'), download: 'Альшаеб_Басель_CV_RU.pdf' },
+  { label: 'GitHub', href: 'https://github.com/Basselalshayeb2', external: true },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/bassel-alshayeb', external: true },
+  { label: 'Telegram', href: 'https://t.me/bassel_alshayeb', external: true }
+];
+
+const metrics: Metric[] = [
+  {
+    value: '95-97%',
+    label: 'ASR/LLM cost reduction',
+    detail: 'Browser VAD and command filtering reduced processed audio from about 600s to 18-30s per 10-minute clinical session.'
+  },
+  {
+    value: '12',
+    label: 'microservices owned',
+    detail: 'End-to-end backend architecture for Tahkeem, a live UAE Government awards and competition platform.'
+  },
+  {
+    value: '10k+',
+    label: 'active iGaming players',
+    detail: 'Slotaxy provider integrations and real-time game flows across BGaming, Slotegrator, and Pragmatic Play.'
+  },
+  {
+    value: '14k+',
+    label: 'GovTech users',
+    detail: 'Registered users on Tahkeem with 2,000+ submitted applications across evaluation cycles.'
+  },
+  {
+    value: '6+',
+    label: 'commercial years',
+    detail: 'Backend-heavy production delivery across GovTech, iGaming, FinTech, POS/SaaS, and IoT.'
+  }
+];
+
+const experiences: Experience[] = [
+  {
+    company: 'Larsa / Tahkeem',
+    role: 'Senior Backend Developer',
+    period: 'Jun 2025 - Present',
+    summary:
+      'Sole backend engineer for 12 microservices powering UAE Government awards and competition workflows, including evaluation pipelines, jury stages, notifications, and service APIs.',
+    stack: 'Node.js / TypeScript / Go / MongoDB / NATS / Docker'
+  },
+  {
+    company: 'Sigma Digital / 1xbet group',
+    role: 'Senior Backend Developer',
+    period: 'Oct 2023 - Mar 2025',
+    summary:
+      'Built Slotaxy provider integrations for 10,000+ active players and designed Vektor as a Java / Spring Cloud FinTech microservice system with RabbitMQ and PostgreSQL.',
+    stack: 'Laravel / Node.js / Java / Spring Boot / PostgreSQL / RabbitMQ / WebSocket'
+  },
+  {
+    company: 'BeInMedia / Wiyak',
+    role: 'Senior Fullstack Developer',
+    period: 'Oct 2022 - Oct 2023',
+    summary:
+      'Enhanced real-time order delivery for a Kuwait POS ecosystem serving 1,000+ restaurants, managing WebSocket state across drivers, restaurants, orders, and payment states.',
+    stack: 'Laravel / Vue.js / MariaDB / Laravel Echo / WebSocket / CI/CD'
+  },
+  {
+    company: 'PlanA Agency',
+    role: 'Fullstack Engineer',
+    period: 'Jul 2021 - Oct 2022',
+    summary:
+      'Delivered crypto exchange dashboards with Binance API integration, precise decimal commission logic, Amadeus flight search/reservation, and UAE client applications.',
+    stack: 'Laravel / Vue.js / Node.js / MySQL / Nginx'
+  },
+  {
+    company: 'Disrupt-x / Unifi Solutions',
+    role: 'Backend Engineer',
+    period: 'Aug 2020 - Mar 2021',
+    summary:
+      'Developed IoT security services for Dubai, integrating physical sensors with Dubai Police law-enforcement APIs through the SIA protocol and AWS deployments.',
+    stack: 'Node.js / Express.js / MySQL / MariaDB / AWS / IoT Sensors'
+  }
+];
+
+const skillGroups: SkillGroup[] = [
+  { title: 'Languages', items: ['Node.js', 'TypeScript', 'PHP', 'Java', 'Go', 'Python'] },
+  { title: 'Backend', items: ['Laravel', 'NestJS', 'Express.js', 'Spring Boot 3.x', 'Spring Cloud', 'REST API', 'WebSocket', 'Microservices'] },
+  { title: 'Databases & Messaging', items: ['PostgreSQL', 'MongoDB', 'MySQL', 'MariaDB', 'Redis', 'RabbitMQ', 'Apache Kafka', 'NATS'] },
+  { title: 'DevOps', items: ['Docker', 'CI/CD', 'Nginx', 'Linux', 'AWS', 'Ubuntu'] },
+  { title: 'Tools', items: ['Git', 'Elasticsearch', 'Postman', 'Agile/Scrum', 'GitHub Copilot', 'Claude', 'ChatGPT/Codex'] }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={siteUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body>
+    <main>
+      <section class="shell relative min-h-[760px] overflow-hidden pb-10 pt-6 sm:pb-10 sm:pt-8">
+        <img
+          src={heroImage}
+          alt=""
+          aria-hidden="true"
+          class="hero-image-mask pointer-events-none absolute right-[-34rem] top-20 z-0 hidden w-[78rem] max-w-none opacity-55 mix-blend-screen lg:block"
+          loading="eager"
+        />
+
+        <nav class="relative z-10 flex items-center justify-between gap-4 border-b border-[var(--rule)] pb-5 font-mono text-[0.68rem] font-bold uppercase tracking-[0.12em] text-[var(--muted)]">
+          <a href="#top" class="transition hover:text-[var(--ink)]">Bassel Alshayeb</a>
+          <div class="hidden items-center gap-5 md:flex">
+            <a href="#experience" class="transition hover:text-[var(--brass)]">Experience</a>
+            <a href="#project" class="transition hover:text-[var(--brass)]">Project</a>
+            <a href="#skills" class="transition hover:text-[var(--brass)]">Skills</a>
+            <a href="#contact" class="text-[var(--brass)] transition hover:text-[var(--ink)]">Contact</a>
+          </div>
+        </nav>
+
+        <div id="top" class="relative z-10 grid gap-10 py-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(340px,0.92fr)] lg:items-end lg:py-6">
+          <div class="reveal">
+            <p class="mb-4 font-mono text-xs font-bold uppercase tracking-[0.18em] text-[var(--brass)]">Production backend ownership</p>
+            <h1 class="font-display text-[clamp(4rem,11vw,8.9rem)] font-medium leading-[0.78] tracking-[-0.055em] text-[#fff8df]">
+              Bassel<br />Alshayeb
+            </h1>
+            <div class="mt-7 grid gap-2 font-mono text-sm font-bold leading-6 text-[var(--muted)]">
+              <p class="text-[var(--brass)]">Senior Backend / Backend-heavy Fullstack Engineer</p>
+              <p>Backend: Node.js / TypeScript &middot; PHP / Laravel &middot; Go &middot; Java / Spring Boot</p>
+              <p>Frontend where needed: Angular &middot; React &middot; Vue.js</p>
+              <p>Data &amp; messaging: PostgreSQL &middot; MongoDB &middot; MySQL/MariaDB &middot; Redis &middot; RabbitMQ &middot; Kafka &middot; NATS</p>
+            </div>
+            <p class="mt-7 max-w-3xl text-lg leading-8 text-[var(--muted)] sm:text-xl">
+              Senior Backend Engineer with 6+ years of commercial experience, frequently operating as the sole backend engineer on production systems across GovTech, iGaming, FinTech, POS/SaaS, and IoT, with proven frontend delivery when the product needs it.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              {
+                links.map((link, index) => (
+                  <a
+                    href={link.href}
+                    download={link.download}
+                    target={link.external ? '_blank' : undefined}
+                    rel={link.external ? 'noreferrer' : undefined}
+                    class:list={[
+                      'rounded-full border px-4 py-3 font-mono text-xs font-extrabold uppercase tracking-[0.08em] transition',
+                      index === 0
+                        ? 'border-[var(--brass)] bg-[var(--brass)] text-[var(--night)] hover:bg-[var(--brass-soft)]'
+                        : 'border-[var(--rule)] text-[var(--ink)] hover:border-[var(--brass)] hover:text-[var(--brass)]'
+                    ]}
+                  >
+                    {link.label}
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+
+          <aside class="panel reveal reveal-delay-1 rounded-2xl p-5">
+            <h2 class="sr-only">Proof metrics</h2>
+            <div class="grid divide-y divide-[var(--rule)]">
+              {
+                metrics.map((metric) => (
+                  <article class="grid grid-cols-[minmax(4.8rem,6.4rem)_1fr] gap-4 py-5 first:pt-1 last:pb-1">
+                    <strong class="font-display text-4xl font-semibold leading-none text-[#fff8df]">{metric.value}</strong>
+                    <div>
+                      <h3 class="font-mono text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--brass)]">{metric.label}</h3>
+                      <p class="mt-2 text-sm leading-6 text-[var(--muted)]">{metric.detail}</p>
+                    </div>
+                  </article>
+                ))
+              }
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="experience" class="shell border-t border-[var(--rule)] py-14 sm:py-20">
+        <div class="grid gap-7 lg:grid-cols-[180px_1fr]">
+          <p class="font-mono text-xs font-bold uppercase tracking-[0.18em] text-[var(--brass)]">Experience</p>
+          <div>
+            <h2 class="font-display text-4xl font-medium leading-tight tracking-[-0.035em] text-[#fff8df] sm:text-5xl">
+              Production ownership across government, gaming, POS, agency, and IoT systems.
+            </h2>
+            <div class="mt-10 grid gap-4">
+              {
+                experiences.map((item) => (
+                  <article class="grid gap-4 border-t border-[var(--rule)] pt-5 md:grid-cols-[minmax(150px,0.45fr)_1fr_minmax(170px,0.55fr)] md:gap-6">
+                    <div>
+                      <h3 class="text-lg font-bold text-[#fff8df]">{item.company}</h3>
+                      <p class="mt-1 font-mono text-[0.72rem] font-bold uppercase tracking-[0.12em] text-[var(--quiet)]">{item.period}</p>
+                      <p class="mt-3 text-sm font-semibold text-[var(--muted)]">{item.role}</p>
+                    </div>
+                    <p class="text-base leading-7 text-[var(--muted)]">{item.summary}</p>
+                    <p class="font-mono text-xs font-bold leading-6 text-[var(--brass)]">{item.stack}</p>
+                  </article>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="project" class="shell border-t border-[var(--rule)] py-14 sm:py-20">
+        <div class="grid gap-7 lg:grid-cols-[180px_1fr]">
+          <p class="font-mono text-xs font-bold uppercase tracking-[0.18em] text-[var(--brass)]">Featured project</p>
+          <div>
+            <h2 class="font-display text-4xl font-medium leading-tight tracking-[-0.035em] text-[#fff8df] sm:text-5xl">
+              AI Voice Assistant for Dentists - STOMMIS Integration.
+            </h2>
+            <div class="mt-9 grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
+              <div class="panel rounded-2xl border-[var(--rule-strong)] p-6 font-mono text-sm font-bold leading-7 text-[var(--ink)]">
+                Browser VAD -> Yandex SpeechKit ASR -> command classifier -> Qwen LLM -> JSON Schema validation -> REST API write to MIS
+              </div>
+              <div class="grid gap-4 text-base leading-7 text-[var(--muted)]">
+                <p>
+                  Built a hands-free clinical voice assistant integrated with the STOMMIS dental MIS, piloted at SPb GBUZ SP No. 8 with a signed institutional adoption agreement.
+                </p>
+                <p>
+                  A TF-IDF + logistic regression command classifier trained on 8,000 synthetic transcriptions gates LLM invocation, reducing ASR and LLM cost by 95-97%.
+                </p>
+                <p>
+                  Qwen output is constrained to a strict intent + slots JSON contract, validated with JSON Schema and an intent whitelist before any MIS write. No medical record is modified unless the full pipeline validates cleanly. End-to-end command latency is about 2-3 seconds.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="shell border-t border-[var(--rule)] py-14 sm:py-20">
+        <div class="grid gap-7 lg:grid-cols-[180px_1fr]">
+          <p class="font-mono text-xs font-bold uppercase tracking-[0.18em] text-[var(--brass)]">Skills</p>
+          <div>
+            <h2 class="font-display text-4xl font-medium leading-tight tracking-[-0.035em] text-[#fff8df] sm:text-5xl">
+              Backend-heavy stack, with frontend evidence where it matters.
+            </h2>
+            <p class="mt-5 max-w-3xl text-base leading-7 text-[var(--muted)]">
+              Frontend proof: Angular in Gymesis, React in TradinosUG, and Vue.js in Wiyak and PlanA delivery work. The center of gravity remains backend architecture, integrations, data flow, and production support.
+            </p>
+            <div class="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+              {
+                skillGroups.map((group) => (
+                  <article class="border-t-2 border-[var(--brass)] pt-4">
+                    <h3 class="font-mono text-sm font-extrabold uppercase tracking-[0.1em] text-[#fff8df]">{group.title}</h3>
+                    <p class="mt-4 text-sm leading-7 text-[var(--muted)]">{group.items.join(', ')}</p>
+                  </article>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="shell border-t border-[var(--rule)] py-14 sm:py-20">
+        <div class="rounded-2xl bg-[var(--brass)] p-6 text-[var(--night)] shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-8">
+          <div>
+            <p class="font-mono text-xs font-extrabold uppercase tracking-[0.14em]">Contact</p>
+            <h2 class="mt-3 font-display text-4xl font-semibold leading-tight tracking-[-0.035em]">Available for senior backend-heavy roles.</h2>
+          </div>
+          <address class="mt-7 grid gap-2 not-italic lg:mt-0 lg:text-right">
+            <a class="font-mono text-sm font-extrabold underline-offset-4 hover:underline" href="mailto:basl.alshayeb@gmail.com">basl.alshayeb@gmail.com</a>
+            <a class="font-mono text-sm font-extrabold underline-offset-4 hover:underline" href="https://github.com/Basselalshayeb2" target="_blank" rel="noreferrer">github.com/Basselalshayeb2</a>
+            <a class="font-mono text-sm font-extrabold underline-offset-4 hover:underline" href="https://linkedin.com/in/bassel-alshayeb" target="_blank" rel="noreferrer">linkedin.com/in/bassel-alshayeb</a>
+            <a class="font-mono text-sm font-extrabold underline-offset-4 hover:underline" href="https://t.me/bassel_alshayeb" target="_blank" rel="noreferrer">t.me/bassel_alshayeb</a>
+          </address>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
