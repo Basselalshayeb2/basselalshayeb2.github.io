@@ -2,20 +2,25 @@
 import '../styles/global.css';
 
 const siteUrl = 'https://basselalshayeb2.github.io/myportfolio/';
-const pageTitle = 'Bassel Alshayeb - Senior Backend Engineer';
+const pageTitle = 'Bassel Alshayeb | Senior Backend Engineer';
 const pageDescription =
-  'Senior Backend / Backend-heavy Fullstack Engineer with 6+ years across GovTech, iGaming, FinTech, POS/SaaS, IoT, microservices, and AI clinical systems.';
+  'Senior Backend Engineer with 6+ years of production ownership across GovTech, iGaming, FinTech, POS/SaaS, IoT, microservices, and AI clinical systems.';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const withBase = (path: string) => `${baseUrl}${path.replace(/^\/+/, '')}`;
 const heroImage = withBase('systems-ledger-hero.png');
 const ogImage = `${siteUrl}systems-ledger-hero.png`;
+const englishCv = withBase('Bassel_Alshayeb_CV_EN.pdf');
+const russianCv = withBase('Альшаеб_Басель_CV_RU.pdf');
+const favicon = withBase('favicon.svg');
 
 type LinkItem = {
   label: string;
   href: string;
+  ariaLabel?: string;
   download?: boolean | string;
   external?: boolean;
+  variant?: 'primary' | 'secondary' | 'quiet';
 };
 
 type Metric = {
@@ -37,12 +42,17 @@ type SkillGroup = {
   items: string[];
 };
 
+type OwnershipRow = {
+  system: string;
+  scope: string;
+  proof: string;
+};
+
 const links: LinkItem[] = [
-  { label: 'Download CV EN', href: withBase('Bassel_Alshayeb_CV_EN.pdf'), download: 'Bassel_Alshayeb_CV_EN.pdf' },
-  { label: 'Download CV RU', href: withBase('Альшаеб_Басель_CV_RU.pdf'), download: 'Альшаеб_Басель_CV_RU.pdf' },
-  { label: 'GitHub', href: 'https://github.com/Basselalshayeb2', external: true },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/bassel-alshayeb', external: true },
-  { label: 'Telegram', href: 'https://t.me/bassel_alshayeb', external: true }
+  { label: 'Download CV EN', ariaLabel: 'Download English CV', href: englishCv, download: 'Bassel_Alshayeb_CV_EN.pdf', variant: 'primary' },
+  { label: 'Download CV RU', ariaLabel: 'Download Russian CV', href: russianCv, download: 'Альшаеб_Басель_CV_RU.pdf', variant: 'secondary' },
+  { label: 'Contact', href: '#contact', variant: 'secondary' },
+  { label: 'GitHub', href: 'https://github.com/Basselalshayeb2', external: true, variant: 'quiet' }
 ];
 
 const metrics: Metric[] = [
@@ -70,6 +80,36 @@ const metrics: Metric[] = [
     value: '6+',
     label: 'commercial years',
     detail: 'Backend-heavy production delivery across GovTech, iGaming, FinTech, POS/SaaS, and IoT.'
+  }
+];
+
+const heroProof: Metric[] = [
+  metrics[4],
+  metrics[1],
+  metrics[2],
+  metrics[3]
+];
+
+const ownershipRows: OwnershipRow[] = [
+  {
+    system: 'Tahkeem GovTech',
+    scope: 'Often the sole backend owner for 12 microservices',
+    proof: '14k+ users and 2,000+ submitted applications'
+  },
+  {
+    system: 'Slotaxy iGaming',
+    scope: 'Provider integrations and real-time game flows',
+    proof: '10k+ active players across live providers'
+  },
+  {
+    system: 'STOMMIS clinical AI',
+    scope: 'Voice-to-MIS command pipeline with strict validation',
+    proof: '95-97% ASR/LLM cost reduction'
+  },
+  {
+    system: 'Wiyak POS/SaaS',
+    scope: 'Real-time order delivery and payment state',
+    proof: '1,000+ restaurants in a Kuwait POS ecosystem'
   }
 ];
 
@@ -123,6 +163,18 @@ const skillGroups: SkillGroup[] = [
   { title: 'DevOps', items: ['Docker', 'CI/CD', 'Nginx', 'Linux', 'AWS', 'Ubuntu'] },
   { title: 'Tools', items: ['Git', 'Elasticsearch', 'Postman', 'Agile/Scrum', 'GitHub Copilot', 'Claude', 'ChatGPT/Codex'] }
 ];
+
+const personJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Bassel Alshayeb',
+  url: siteUrl,
+  image: ogImage,
+  jobTitle: 'Senior Backend Engineer',
+  email: 'mailto:basl.alshayeb@gmail.com',
+  sameAs: ['https://github.com/Basselalshayeb2', 'https://linkedin.com/in/bassel-alshayeb', 'https://t.me/bassel_alshayeb'],
+  knowsAbout: ['Node.js', 'TypeScript', 'Laravel', 'Go', 'Java Spring Boot', 'Microservices', 'PostgreSQL', 'MongoDB', 'RabbitMQ', 'Kafka', 'NATS']
+});
 ---
 
 <!doctype html>
@@ -132,86 +184,94 @@ const skillGroups: SkillGroup[] = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
+    <meta name="author" content="Bassel Alshayeb" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0d1011" />
+    <link rel="icon" type="image/svg+xml" href={favicon} />
     <link rel="canonical" href={siteUrl} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bassel Alshayeb Portfolio" />
     <meta property="og:url" content={siteUrl} />
     <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" is:inline set:html={personJsonLd} />
   </head>
   <body>
     <main>
-      <section class="shell relative min-h-[760px] overflow-hidden pb-10 pt-6 sm:pb-10 sm:pt-8">
-        <img
-          src={heroImage}
-          alt=""
-          aria-hidden="true"
-          class="hero-image-mask pointer-events-none absolute right-[-34rem] top-20 z-0 hidden w-[78rem] max-w-none opacity-55 mix-blend-screen lg:block"
-          loading="eager"
-        />
+      <section class="hero-section">
+        <div class="systems-ambient" style={`--systems-art: url("${heroImage}")`} aria-hidden="true"></div>
 
-        <nav class="relative z-10 flex items-center justify-between gap-4 border-b border-[var(--rule)] pb-5 font-mono text-[0.68rem] font-bold uppercase tracking-[0.12em] text-[var(--muted)]">
-          <a href="#top" class="transition hover:text-[var(--ink)]">Bassel Alshayeb</a>
-          <div class="hidden items-center gap-5 md:flex">
-            <a href="#experience" class="transition hover:text-[var(--brass)]">Experience</a>
-            <a href="#project" class="transition hover:text-[var(--brass)]">Project</a>
-            <a href="#skills" class="transition hover:text-[var(--brass)]">Skills</a>
-            <a href="#contact" class="text-[var(--brass)] transition hover:text-[var(--ink)]">Contact</a>
+        <nav class="site-nav shell" aria-label="Primary navigation">
+          <a href="#top" class="brand-lockup">
+            <span>Bassel Alshayeb</span>
+            <small>Senior Backend Engineer</small>
+          </a>
+          <div class="nav-links">
+            <a href="#experience">Experience</a>
+            <a href="#project">Project</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
           </div>
+          <a class="nav-cta" href={englishCv} download="Bassel_Alshayeb_CV_EN.pdf" aria-label="Download English CV">CV</a>
         </nav>
 
-        <div id="top" class="relative z-10 grid gap-10 py-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(340px,0.92fr)] lg:items-end lg:py-6">
-          <div class="reveal">
-            <p class="mb-4 font-mono text-xs font-bold uppercase tracking-[0.18em] text-[var(--brass)]">Production backend ownership</p>
-            <h1 class="font-display text-[clamp(4rem,11vw,8.9rem)] font-medium leading-[0.78] tracking-[-0.055em] text-[#fff8df]">
-              Bassel<br />Alshayeb
-            </h1>
-            <div class="mt-7 grid gap-2 font-mono text-sm font-bold leading-6 text-[var(--muted)]">
-              <p class="text-[var(--brass)]">Senior Backend / Backend-heavy Fullstack Engineer</p>
-              <p>Backend: Node.js / TypeScript &middot; PHP / Laravel &middot; Go &middot; Java / Spring Boot</p>
-              <p>Frontend where needed: Angular &middot; React &middot; Vue.js</p>
-              <p>Data &amp; messaging: PostgreSQL &middot; MongoDB &middot; MySQL/MariaDB &middot; Redis &middot; RabbitMQ &middot; Kafka &middot; NATS</p>
-            </div>
-            <p class="mt-7 max-w-3xl text-lg leading-8 text-[var(--muted)] sm:text-xl">
-              Senior Backend Engineer with 6+ years of commercial experience, frequently operating as the sole backend engineer on production systems across GovTech, iGaming, FinTech, POS/SaaS, and IoT, with proven frontend delivery when the product needs it.
+        <div id="top" class="hero-grid shell">
+          <div class="hero-copy reveal">
+            <p class="identity-line">Bassel Alshayeb</p>
+            <h1>Senior Backend Engineer</h1>
+            <p class="hero-lead">Production backend ownership across GovTech, iGaming, FinTech, POS/SaaS, and IoT.</p>
+            <p class="hero-support">
+              6+ years building and supporting production systems, often as the sole backend owner across microservices, integrations, real-time workflows, and data-heavy platforms. Backend-heavy fullstack delivery when the product needs it.
             </p>
-            <div class="mt-8 flex flex-wrap gap-3">
+
+            <div class="hero-actions" aria-label="Primary actions">
               {
-                links.map((link, index) => (
+                links.map((link) => (
                   <a
+                    class:list={['action-link', `action-link--${link.variant ?? 'secondary'}`]}
                     href={link.href}
+                    aria-label={link.ariaLabel}
                     download={link.download}
                     target={link.external ? '_blank' : undefined}
                     rel={link.external ? 'noreferrer' : undefined}
-                    class:list={[
-                      'rounded-full border px-4 py-3 font-mono text-xs font-extrabold uppercase tracking-[0.08em] transition',
-                      index === 0
-                        ? 'border-[var(--brass)] bg-[var(--brass)] text-[var(--night)] hover:bg-[var(--brass-soft)]'
-                        : 'border-[var(--rule)] text-[var(--ink)] hover:border-[var(--brass)] hover:text-[var(--brass)]'
-                    ]}
                   >
                     {link.label}
                   </a>
                 ))
               }
             </div>
+
+            <dl class="proof-strip" aria-label="Career proof summary">
+              {
+                heroProof.map((metric) => (
+                  <div>
+                    <dt>{metric.value}</dt>
+                    <dd>{metric.label}</dd>
+                  </div>
+                ))
+              }
+            </dl>
           </div>
 
-          <aside class="panel reveal reveal-delay-1 rounded-2xl p-5">
-            <h2 class="sr-only">Proof metrics</h2>
-            <div class="grid divide-y divide-[var(--rule)]">
+          <aside class="ownership-panel reveal reveal-delay-1" aria-labelledby="ownership-title">
+            <div class="panel-heading">
+              <h2 id="ownership-title">Proof recruiters can scan</h2>
+              <p>Production systems, named domains, and scale signals.</p>
+            </div>
+            <div class="ownership-list">
               {
-                metrics.map((metric) => (
-                  <article class="grid grid-cols-[minmax(4.8rem,6.4rem)_1fr] gap-4 py-5 first:pt-1 last:pb-1">
-                    <strong class="font-display text-4xl font-semibold leading-none text-[#fff8df]">{metric.value}</strong>
-                    <div>
-                      <h3 class="font-mono text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--brass)]">{metric.label}</h3>
-                      <p class="mt-2 text-sm leading-6 text-[var(--muted)]">{metric.detail}</p>
-                    </div>
+                ownershipRows.map((row) => (
+                  <article>
+                    <p class="ownership-system">{row.system}</p>
+                    <h3>{row.scope}</h3>
+                    <p>{row.proof}</p>
                   </article>
                 ))
               }
@@ -222,18 +282,18 @@ const skillGroups: SkillGroup[] = [
 
       <section id="experience" class="shell border-t border-[var(--rule)] py-14 sm:py-20">
         <div class="grid gap-7 lg:grid-cols-[180px_1fr]">
-          <p class="font-mono text-xs font-bold uppercase tracking-[0.18em] text-[var(--brass)]">Experience</p>
+          <p class="section-label">Experience</p>
           <div>
-            <h2 class="font-display text-4xl font-medium leading-tight tracking-[-0.035em] text-[#fff8df] sm:text-5xl">
+            <h2 class="section-heading">
               Production ownership across government, gaming, POS, agency, and IoT systems.
             </h2>
             <div class="mt-10 grid gap-4">
               {
                 experiences.map((item) => (
-                  <article class="grid gap-4 border-t border-[var(--rule)] pt-5 md:grid-cols-[minmax(150px,0.45fr)_1fr_minmax(170px,0.55fr)] md:gap-6">
+                  <article class="experience-row">
                     <div>
                       <h3 class="text-lg font-bold text-[#fff8df]">{item.company}</h3>
-                      <p class="mt-1 font-mono text-[0.72rem] font-bold uppercase tracking-[0.12em] text-[var(--quiet)]">{item.period}</p>
+                      <p class="mt-1 font-mono text-[0.72rem] font-bold uppercase text-[var(--quiet)]">{item.period}</p>
                       <p class="mt-3 text-sm font-semibold text-[var(--muted)]">{item.role}</p>
                     </div>
                     <p class="text-base leading-7 text-[var(--muted)]">{item.summary}</p>
@@ -248,13 +308,13 @@ const skillGroups: SkillGroup[] = [
 
       <section id="project" class="shell border-t border-[var(--rule)] py-14 sm:py-20">
         <div class="grid gap-7 lg:grid-cols-[180px_1fr]">
-          <p class="font-mono text-xs font-bold uppercase tracking-[0.18em] text-[var(--brass)]">Featured project</p>
+          <p class="section-label">Featured project</p>
           <div>
-            <h2 class="font-display text-4xl font-medium leading-tight tracking-[-0.035em] text-[#fff8df] sm:text-5xl">
+            <h2 class="section-heading">
               AI Voice Assistant for Dentists - STOMMIS Integration.
             </h2>
             <div class="mt-9 grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
-              <div class="panel rounded-2xl border-[var(--rule-strong)] p-6 font-mono text-sm font-bold leading-7 text-[var(--ink)]">
+              <div class="panel rounded-lg border-[var(--rule-strong)] p-6 font-mono text-sm font-bold leading-7 text-[var(--ink)]">
                 Browser VAD -> Yandex SpeechKit ASR -> command classifier -> Qwen LLM -> JSON Schema validation -> REST API write to MIS
               </div>
               <div class="grid gap-4 text-base leading-7 text-[var(--muted)]">
@@ -275,9 +335,9 @@ const skillGroups: SkillGroup[] = [
 
       <section id="skills" class="shell border-t border-[var(--rule)] py-14 sm:py-20">
         <div class="grid gap-7 lg:grid-cols-[180px_1fr]">
-          <p class="font-mono text-xs font-bold uppercase tracking-[0.18em] text-[var(--brass)]">Skills</p>
+          <p class="section-label">Skills</p>
           <div>
-            <h2 class="font-display text-4xl font-medium leading-tight tracking-[-0.035em] text-[#fff8df] sm:text-5xl">
+            <h2 class="section-heading">
               Backend-heavy stack, with frontend evidence where it matters.
             </h2>
             <p class="mt-5 max-w-3xl text-base leading-7 text-[var(--muted)]">
@@ -287,7 +347,7 @@ const skillGroups: SkillGroup[] = [
               {
                 skillGroups.map((group) => (
                   <article class="border-t-2 border-[var(--brass)] pt-4">
-                    <h3 class="font-mono text-sm font-extrabold uppercase tracking-[0.1em] text-[#fff8df]">{group.title}</h3>
+                    <h3 class="font-mono text-sm font-extrabold uppercase text-[#fff8df]">{group.title}</h3>
                     <p class="mt-4 text-sm leading-7 text-[var(--muted)]">{group.items.join(', ')}</p>
                   </article>
                 ))
@@ -298,13 +358,15 @@ const skillGroups: SkillGroup[] = [
       </section>
 
       <section id="contact" class="shell border-t border-[var(--rule)] py-14 sm:py-20">
-        <div class="rounded-2xl bg-[var(--brass)] p-6 text-[var(--night)] shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-8">
+        <div class="contact-band">
           <div>
-            <p class="font-mono text-xs font-extrabold uppercase tracking-[0.14em]">Contact</p>
-            <h2 class="mt-3 font-display text-4xl font-semibold leading-tight tracking-[-0.035em]">Available for senior backend-heavy roles.</h2>
+            <p class="font-mono text-xs font-extrabold uppercase">Contact</p>
+            <h2>Available for senior backend-heavy roles.</h2>
           </div>
-          <address class="mt-7 grid gap-2 not-italic lg:mt-0 lg:text-right">
+          <address>
             <a class="font-mono text-sm font-extrabold underline-offset-4 hover:underline" href="mailto:basl.alshayeb@gmail.com">basl.alshayeb@gmail.com</a>
+            <a class="font-mono text-sm font-extrabold underline-offset-4 hover:underline" href={englishCv} download="Bassel_Alshayeb_CV_EN.pdf">Download CV EN</a>
+            <a class="font-mono text-sm font-extrabold underline-offset-4 hover:underline" href={russianCv} download="Альшаеб_Басель_CV_RU.pdf">Download CV RU</a>
             <a class="font-mono text-sm font-extrabold underline-offset-4 hover:underline" href="https://github.com/Basselalshayeb2" target="_blank" rel="noreferrer">github.com/Basselalshayeb2</a>
             <a class="font-mono text-sm font-extrabold underline-offset-4 hover:underline" href="https://linkedin.com/in/bassel-alshayeb" target="_blank" rel="noreferrer">linkedin.com/in/bassel-alshayeb</a>
             <a class="font-mono text-sm font-extrabold underline-offset-4 hover:underline" href="https://t.me/bassel_alshayeb" target="_blank" rel="noreferrer">t.me/bassel_alshayeb</a>

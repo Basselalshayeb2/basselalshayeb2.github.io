@@ -7,14 +7,17 @@ const htmlPath = join(root, 'dist', 'index.html');
 const requiredFiles = [
   'public/Bassel_Alshayeb_CV_EN.pdf',
   'public/Альшаеб_Басель_CV_RU.pdf',
+  'public/favicon.svg',
   'public/systems-ledger-hero.png'
 ];
 
 const requiredText = [
   'Bassel Alshayeb',
-  'Senior Backend / Backend-heavy Fullstack Engineer',
-  'Frontend where needed: Angular',
-  'Data &amp; messaging: PostgreSQL',
+  'Senior Backend Engineer',
+  'Production backend ownership across GovTech, iGaming, FinTech, POS/SaaS, and IoT.',
+  'Often the sole backend owner',
+  'Proof recruiters can scan',
+  'Backend-heavy fullstack delivery when the product needs it.',
   '95-97%',
   '12',
   '10k+',
@@ -27,8 +30,10 @@ const requiredText = [
 ];
 
 const requiredLinks = [
+  'href="/myportfolio/favicon.svg"',
   'href="/myportfolio/Bassel_Alshayeb_CV_EN.pdf"',
   'href="/myportfolio/Альшаеб_Басель_CV_RU.pdf"',
+  'href="#contact"',
   'href="https://github.com/Basselalshayeb2"',
   'href="https://linkedin.com/in/bassel-alshayeb"',
   'href="https://t.me/bassel_alshayeb"',
@@ -37,14 +42,17 @@ const requiredLinks = [
 
 const requiredAssetReferences = [
   'href="/myportfolio/_astro/',
-  'src="/myportfolio/systems-ledger-hero.png"',
+  '--systems-art: url(&quot;/myportfolio/systems-ledger-hero.png&quot;)',
+  'content="#0d1011"',
+  'application/ld+json',
   'content="https://basselalshayeb2.github.io/myportfolio/"',
   'content="https://basselalshayeb2.github.io/myportfolio/systems-ledger-hero.png"'
 ];
 
 const forbiddenText = [
   '/mywebsite/',
-  'https://basselalshayeb2.github.io/mywebsite/'
+  'https://basselalshayeb2.github.io/mywebsite/',
+  'src="/myportfolio/systems-ledger-hero.png"'
 ];
 
 function fail(message) {
