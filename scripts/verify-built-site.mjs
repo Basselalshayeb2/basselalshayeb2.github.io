@@ -27,12 +27,24 @@ const requiredText = [
 ];
 
 const requiredLinks = [
-  'href="/mywebsite/Bassel_Alshayeb_CV_EN.pdf"',
-  'href="/mywebsite/Альшаеб_Басель_CV_RU.pdf"',
+  'href="/myportfolio/Bassel_Alshayeb_CV_EN.pdf"',
+  'href="/myportfolio/Альшаеб_Басель_CV_RU.pdf"',
   'href="https://github.com/Basselalshayeb2"',
   'href="https://linkedin.com/in/bassel-alshayeb"',
   'href="https://t.me/bassel_alshayeb"',
   'href="mailto:basl.alshayeb@gmail.com"'
+];
+
+const requiredAssetReferences = [
+  'href="/myportfolio/_astro/',
+  'src="/myportfolio/systems-ledger-hero.png"',
+  'content="https://basselalshayeb2.github.io/myportfolio/"',
+  'content="https://basselalshayeb2.github.io/myportfolio/systems-ledger-hero.png"'
+];
+
+const forbiddenText = [
+  '/mywebsite/',
+  'https://basselalshayeb2.github.io/mywebsite/'
 ];
 
 function fail(message) {
@@ -53,6 +65,18 @@ if (!existsSync(htmlPath)) {
   for (const link of requiredLinks) {
     if (!html.includes(link)) {
       fail(`Built HTML does not include required link: ${link}`);
+    }
+  }
+
+  for (const reference of requiredAssetReferences) {
+    if (!html.includes(reference)) {
+      fail(`Built HTML does not include required asset reference: ${reference}`);
+    }
+  }
+
+  for (const text of forbiddenText) {
+    if (html.includes(text)) {
+      fail(`Built HTML still references old GitHub Pages path: ${text}`);
     }
   }
 }

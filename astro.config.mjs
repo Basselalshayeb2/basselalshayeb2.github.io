@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://basselalshayeb2.github.io',
-  base: '/mywebsite',
+  base: '/myportfolio',
   devToolbar: {
     enabled: false
   },

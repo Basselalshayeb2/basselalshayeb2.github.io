@@ -15,7 +15,7 @@ npm run dev
 Open the local URL printed by Astro. With the current GitHub Pages base path, it is usually:
 
 ```text
-http://localhost:4321/mywebsite/
+http://localhost:4321/myportfolio/
 ```
 
 ## Production Build
@@ -31,14 +31,14 @@ npm run preview
 The project is configured for a project page at:
 
 ```text
-https://basselalshayeb2.github.io/mywebsite/
+https://basselalshayeb2.github.io/myportfolio/
 ```
 
 For this URL, `astro.config.mjs` uses:
 
 ```js
 site: 'https://basselalshayeb2.github.io',
-base: '/mywebsite'
+base: '/myportfolio'
 ```
 
 If the repository name changes, update `base` to `/<repo-name>`. If deploying as a user page at `https://basselalshayeb2.github.io/`, remove the `base` setting and update the canonical URL in `src/pages/index.astro`.
@@ -47,7 +47,7 @@ If the repository name changes, update `base` to `/<repo-name>`. If deploying as
 
 The workflow uses Astro's official `withastro/action@v6` on Node `24`, then publishes with `actions/deploy-pages@v5`.
 
-1. Create a GitHub repository named `mywebsite`.
+1. Create a GitHub repository named `myportfolio`.
 2. Push this project to the `main` branch.
 3. In GitHub, open Settings -> Pages.
 4. Set Source to GitHub Actions.
@@ -60,7 +60,7 @@ git init
 git add .
 git commit -m "feat: build portfolio site"
 git branch -M main
-git remote add origin https://github.com/Basselalshayeb2/mywebsite.git
+git remote add origin https://github.com/Basselalshayeb2/myportfolio.git
 git push -u origin main
 ```
 
