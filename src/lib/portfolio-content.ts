@@ -1,4 +1,4 @@
-export const siteOrigin = 'https://basselalshayeb2.github.io';
+export const siteOrigin = 'https://bassel-alshayeb.com';
 
 export const supportedLocales = ['en', 'ru'] as const;
 export type Locale = (typeof supportedLocales)[number];

@@ -2,8 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://basselalshayeb2.github.io',
-  base: '/myportfolio',
+  site: 'https://bassel-alshayeb.com',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ru'],
