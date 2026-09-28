@@ -217,7 +217,9 @@ button:focus-visible {
 }
 
 .identity-line {
+  display: block;
   margin: 0 0 18px;
+  line-height: normal;
   color: var(--brass);
   font-family: var(--font-mono);
   font-size: 0.82rem;

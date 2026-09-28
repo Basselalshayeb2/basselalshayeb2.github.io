@@ -143,8 +143,10 @@ const personJsonLd = JSON.stringify({
 
         <div id="top" class="hero-grid shell">
           <div class="hero-copy reveal">
-            <p class="identity-line">{content.hero.identityLine}</p>
-            <h1>{content.hero.title}</h1>
+            <h1>
+              <span class="identity-line">{content.hero.identityLine}</span>
+              <span class="block">{content.hero.title}</span>
+            </h1>
             <p class="hero-lead">{content.hero.lead}</p>
             <p class="hero-support">{content.hero.support}</p>
 

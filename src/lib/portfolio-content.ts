@@ -134,9 +134,9 @@ const commonKnowsAbout = [
 
 export const portfolioContent: Record<Locale, PortfolioContent> = {
   en: {
-    pageTitle: 'Bassel Alshayeb | Senior Backend Engineer',
+    pageTitle: 'Bassel Alshayeb | Senior Backend Engineer (Node.js, Go)',
     pageDescription:
-      'Senior Backend Engineer with 6+ years of production ownership across GovTech, iGaming, FinTech, POS/SaaS, IoT, microservices, and AI clinical systems.',
+      'Senior Backend Engineer (Node.js, Go, Laravel, Java) with 6+ years of production ownership across GovTech, iGaming, FinTech, POS/SaaS, IoT, and microservices.',
     author: 'Bassel Alshayeb',
     siteName: 'Bassel Alshayeb Portfolio',
     name: 'Bassel Alshayeb',
@@ -321,9 +321,9 @@ export const portfolioContent: Record<Locale, PortfolioContent> = {
     schemaKnowsAbout: commonKnowsAbout
   },
   ru: {
-    pageTitle: 'Басель Альшаеб | Senior Backend Engineer',
+    pageTitle: 'Басель Альшаеб | Senior Backend-разработчик (Node.js, Go)',
     pageDescription:
-      'Senior Backend Engineer с 6+ годами опыта в production-системах: GovTech, iGaming, FinTech, POS/SaaS, IoT, микросервисы и AI-решения для медицины.',
+      'Senior Backend-разработчик (Node.js, Go, Laravel, Java) с 6+ годами опыта в production-системах: GovTech, iGaming, FinTech, POS/SaaS, IoT и микросервисы.',
     author: 'Басель Альшаеб',
     siteName: 'Портфолио Баселя Альшаеба',
     name: 'Bassel Alshayeb',
