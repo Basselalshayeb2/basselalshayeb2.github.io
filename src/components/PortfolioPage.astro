@@ -29,8 +29,9 @@ const alternateLinks = supportedLocales.map((code) => ({
   shortLabel: localeMeta[code].shortLabel,
   active: code === locale
 }));
-const heroImage = withBase('systems-ledger-hero.png');
-const ogImage = absoluteUrl('systems-ledger-hero.png');
+const heroImage = withBase('systems-ledger-hero.webp');
+const ogImage = absoluteUrl('og-image.jpg');
+const ogImageAlt = `${content.localizedName ?? content.name} — ${content.jobTitle}`;
 const cvHref = {
   en: withBase(cvFiles.en),
   ru: withBase(cvFiles.ru)
@@ -53,7 +54,6 @@ const personJsonLd = JSON.stringify({
   image: ogImage,
   jobTitle: content.jobTitle,
   email: 'mailto:basl.alshayeb@gmail.com',
-  inLanguage: meta.htmlLang,
   sameAs: ['https://github.com/Basselalshayeb2', 'https://linkedin.com/in/bassel-alshayeb', 'https://t.me/bassel_alshayeb'],
   knowsAbout: content.schemaKnowsAbout
 });
@@ -77,12 +77,21 @@ const personJsonLd = JSON.stringify({
     <link rel="alternate" hreflang="x-default" href={alternateLinks.find((link) => link.code === defaultLocale)?.href} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap"
+    />
+    <link rel="sitemap" href={withBase('sitemap-index.xml')} />
     <meta property="og:title" content={content.pageTitle} />
     <meta property="og:description" content={content.pageDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={content.siteName} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:locale" content={meta.ogLocale} />
     {
       alternateLinks
@@ -93,6 +102,7 @@ const personJsonLd = JSON.stringify({
     <meta name="twitter:title" content={content.pageTitle} />
     <meta name="twitter:description" content={content.pageDescription} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     <script type="application/ld+json" is:inline set:html={personJsonLd} />
   </head>
   <body>

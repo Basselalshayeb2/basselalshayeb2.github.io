@@ -9,7 +9,8 @@ const requiredFiles = [
   'public/Bassel_Alshayeb_CV_EN.pdf',
   'public/Bassel_Alshayeb_CV_RU.pdf',
   'public/favicon.svg',
-  'public/systems-ledger-hero.png'
+  'public/systems-ledger-hero.webp',
+  'public/og-image.jpg'
 ];
 
 const requiredEnglishText = [
@@ -55,10 +56,10 @@ const requiredLinks = [
 
 const requiredAssetReferences = [
   'href="/myportfolio/_astro/',
-  '--systems-art: url(&quot;/myportfolio/systems-ledger-hero.png&quot;)',
+  '--systems-art: url(&quot;/myportfolio/systems-ledger-hero.webp&quot;)',
   'content="#0d1011"',
   'application/ld+json',
-  'content="https://basselalshayeb2.github.io/myportfolio/systems-ledger-hero.png"'
+  'content="https://basselalshayeb2.github.io/myportfolio/og-image.jpg"'
 ];
 
 const requiredEnglishReferences = [
@@ -81,7 +82,7 @@ const requiredRussianReferences = [
 const forbiddenText = [
   '/mywebsite/',
   'https://basselalshayeb2.github.io/mywebsite/',
-  'src="/myportfolio/systems-ledger-hero.png"',
+  'src="/myportfolio/systems-ledger-hero.webp"',
   'ÐÐ»ÑŒÑˆÐ°ÐµÐ±',
   'Альшаеб_Басель_CV_RU.pdf',
   'Production backend ownership в',

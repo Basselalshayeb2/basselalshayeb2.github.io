@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
@@ -11,6 +12,17 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en',
+          ru: 'ru'
+        }
+      }
+    })
+  ],
   devToolbar: {
     enabled: false
   },
