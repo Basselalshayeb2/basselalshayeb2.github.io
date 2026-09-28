@@ -10,7 +10,9 @@ const requiredFiles = [
   'public/Bassel_Alshayeb_CV_RU.pdf',
   'public/favicon.svg',
   'public/systems-ledger-hero.webp',
-  'public/og-image.jpg'
+  'public/og-image.jpg',
+  'public/robots.txt',
+  'public/yandex_5b52a2f9c116ce0c.html'
 ];
 
 const requiredEnglishText = [
@@ -44,9 +46,9 @@ const requiredRussianText = [
 ];
 
 const requiredLinks = [
-  'href="/myportfolio/favicon.svg"',
-  'href="/myportfolio/Bassel_Alshayeb_CV_EN.pdf"',
-  'href="/myportfolio/Bassel_Alshayeb_CV_RU.pdf"',
+  'href="/favicon.svg"',
+  'href="/Bassel_Alshayeb_CV_EN.pdf"',
+  'href="/Bassel_Alshayeb_CV_RU.pdf"',
   'href="#contact"',
   'href="https://github.com/Basselalshayeb2"',
   'href="https://linkedin.com/in/bassel-alshayeb"',
@@ -55,34 +57,35 @@ const requiredLinks = [
 ];
 
 const requiredAssetReferences = [
-  'href="/myportfolio/_astro/',
-  '--systems-art: url(&quot;/myportfolio/systems-ledger-hero.webp&quot;)',
+  'href="/_astro/',
+  '--systems-art: url(&quot;/systems-ledger-hero.webp&quot;)',
   'content="#0d1011"',
   'application/ld+json',
-  'content="https://basselalshayeb2.github.io/myportfolio/og-image.jpg"'
+  'content="https://basselalshayeb2.github.io/og-image.jpg"'
 ];
 
 const requiredEnglishReferences = [
   'lang="en"',
-  'content="https://basselalshayeb2.github.io/myportfolio/"',
-  'rel="alternate" hreflang="en" href="https://basselalshayeb2.github.io/myportfolio/"',
-  'rel="alternate" hreflang="ru" href="https://basselalshayeb2.github.io/myportfolio/ru/"',
-  'rel="alternate" hreflang="x-default" href="https://basselalshayeb2.github.io/myportfolio/"'
+  'content="https://basselalshayeb2.github.io/"',
+  'rel="alternate" hreflang="en" href="https://basselalshayeb2.github.io/"',
+  'rel="alternate" hreflang="ru" href="https://basselalshayeb2.github.io/ru/"',
+  'rel="alternate" hreflang="x-default" href="https://basselalshayeb2.github.io/"'
 ];
 
 const requiredRussianReferences = [
   'lang="ru"',
-  'content="https://basselalshayeb2.github.io/myportfolio/ru/"',
-  'rel="alternate" hreflang="en" href="https://basselalshayeb2.github.io/myportfolio/"',
-  'rel="alternate" hreflang="ru" href="https://basselalshayeb2.github.io/myportfolio/ru/"',
-  'href="/myportfolio/"',
-  'href="/myportfolio/ru/"'
+  'content="https://basselalshayeb2.github.io/ru/"',
+  'rel="alternate" hreflang="en" href="https://basselalshayeb2.github.io/"',
+  'rel="alternate" hreflang="ru" href="https://basselalshayeb2.github.io/ru/"',
+  'href="/"',
+  'href="/ru/"'
 ];
 
 const forbiddenText = [
   '/mywebsite/',
+  '/myportfolio/',
   'https://basselalshayeb2.github.io/mywebsite/',
-  'src="/myportfolio/systems-ledger-hero.webp"',
+  'src="/systems-ledger-hero.webp"',
   'ÐÐ»ÑŒÑˆÐ°ÐµÐ±',
   'Альшаеб_Басель_CV_RU.pdf',
   'Production backend ownership в',
