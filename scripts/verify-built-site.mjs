@@ -9,8 +9,7 @@ const requiredFiles = [
   'public/Bassel_Alshayeb_CV_EN.pdf',
   'public/Bassel_Alshayeb_CV_RU.pdf',
   'public/favicon.svg',
-  'public/systems-ledger-hero.png',
-  'public/CNAME'
+  'public/systems-ledger-hero.png'
 ];
 
 const requiredEnglishText = [
@@ -44,9 +43,9 @@ const requiredRussianText = [
 ];
 
 const requiredLinks = [
-  'href="/favicon.svg"',
-  'href="/Bassel_Alshayeb_CV_EN.pdf"',
-  'href="/Bassel_Alshayeb_CV_RU.pdf"',
+  'href="/myportfolio/favicon.svg"',
+  'href="/myportfolio/Bassel_Alshayeb_CV_EN.pdf"',
+  'href="/myportfolio/Bassel_Alshayeb_CV_RU.pdf"',
   'href="#contact"',
   'href="https://github.com/Basselalshayeb2"',
   'href="https://linkedin.com/in/bassel-alshayeb"',
@@ -55,36 +54,34 @@ const requiredLinks = [
 ];
 
 const requiredAssetReferences = [
-  'href="/_astro/',
-  '--systems-art: url(&quot;/systems-ledger-hero.png&quot;)',
+  'href="/myportfolio/_astro/',
+  '--systems-art: url(&quot;/myportfolio/systems-ledger-hero.png&quot;)',
   'content="#0d1011"',
   'application/ld+json',
-  'content="https://bassel-alshayeb.com/systems-ledger-hero.png"'
+  'content="https://basselalshayeb2.github.io/myportfolio/systems-ledger-hero.png"'
 ];
 
 const requiredEnglishReferences = [
   'lang="en"',
-  'content="https://bassel-alshayeb.com/"',
-  'rel="alternate" hreflang="en" href="https://bassel-alshayeb.com/"',
-  'rel="alternate" hreflang="ru" href="https://bassel-alshayeb.com/ru/"',
-  'rel="alternate" hreflang="x-default" href="https://bassel-alshayeb.com/"'
+  'content="https://basselalshayeb2.github.io/myportfolio/"',
+  'rel="alternate" hreflang="en" href="https://basselalshayeb2.github.io/myportfolio/"',
+  'rel="alternate" hreflang="ru" href="https://basselalshayeb2.github.io/myportfolio/ru/"',
+  'rel="alternate" hreflang="x-default" href="https://basselalshayeb2.github.io/myportfolio/"'
 ];
 
 const requiredRussianReferences = [
   'lang="ru"',
-  'content="https://bassel-alshayeb.com/ru/"',
-  'rel="alternate" hreflang="en" href="https://bassel-alshayeb.com/"',
-  'rel="alternate" hreflang="ru" href="https://bassel-alshayeb.com/ru/"',
-  'href="/"',
-  'href="/ru/"'
+  'content="https://basselalshayeb2.github.io/myportfolio/ru/"',
+  'rel="alternate" hreflang="en" href="https://basselalshayeb2.github.io/myportfolio/"',
+  'rel="alternate" hreflang="ru" href="https://basselalshayeb2.github.io/myportfolio/ru/"',
+  'href="/myportfolio/"',
+  'href="/myportfolio/ru/"'
 ];
 
 const forbiddenText = [
   '/mywebsite/',
-  '/myportfolio/',
   'https://basselalshayeb2.github.io/mywebsite/',
-  'https://basselalshayeb2.github.io/myportfolio/',
-  'src="/systems-ledger-hero.png"',
+  'src="/myportfolio/systems-ledger-hero.png"',
   'ÐÐ»ÑŒÑˆÐ°ÐµÐ±',
   'Альшаеб_Басель_CV_RU.pdf',
   'Production backend ownership в',
@@ -151,11 +148,6 @@ for (const file of requiredFiles) {
   if (statSync(path).size === 0) {
     fail(`Required asset is empty: ${file}`);
   }
-}
-
-const cname = readFileSync(join(root, 'public', 'CNAME'), 'utf8').trim();
-if (cname !== 'bassel-alshayeb.com') {
-  fail(`Expected public/CNAME to be bassel-alshayeb.com, got: ${cname}`);
 }
 
 if (process.exitCode) {
