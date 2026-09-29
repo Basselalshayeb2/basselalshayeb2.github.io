@@ -61,6 +61,7 @@ const requiredAssetReferences = [
   '--systems-art: url(&quot;/systems-ledger-hero.webp&quot;)',
   'content="#0d1011"',
   'application/ld+json',
+  'name="google-site-verification" content="e5hdA80ZnM0ZJssYy3xXBciSBdCgy4_ga3WNwYyrl0M"',
   'content="https://basselalshayeb2.github.io/og-image.jpg"'
 ];
 
