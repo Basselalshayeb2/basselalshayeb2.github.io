@@ -249,7 +249,7 @@ export const portfolioContent: Record<Locale, PortfolioContent> = {
             stack: 'Node.js / TypeScript / Go / MongoDB / NATS / Docker'
           },
           {
-            company: 'Sigma Digital / 1xbet group',
+            company: 'Sigma Digital',
             role: 'Senior Backend Developer',
             period: 'Oct 2023 - Mar 2025',
             summary:
@@ -277,8 +277,8 @@ export const portfolioContent: Record<Locale, PortfolioContent> = {
             role: 'Backend Engineer',
             period: 'Aug 2020 - Mar 2021',
             summary:
-              'Developed IoT security services for Dubai, integrating physical sensors with Dubai Police law-enforcement APIs through the SIA protocol and AWS deployments.',
-            stack: 'Node.js / Express.js / MySQL / MariaDB / AWS / IoT Sensors'
+              'Developed IoT security services for Dubai, integrating physical sensors with Dubai Police law-enforcement APIs through the SIA protocol and AWS deployments. Apache Kafka was the platform messaging backbone: built Node.js producers and consumers for streaming sensor and alarm events.',
+            stack: 'Node.js / Express.js / Apache Kafka / MySQL / MariaDB / AWS / IoT Sensors'
           }
         ]
       },
@@ -437,7 +437,7 @@ export const portfolioContent: Record<Locale, PortfolioContent> = {
             stack: 'Node.js / TypeScript / Go / MongoDB / NATS / Docker'
           },
           {
-            company: 'Sigma Digital / 1xbet group',
+            company: 'Sigma Digital',
             role: 'Senior Backend Developer',
             period: 'Oct 2023 - Mar 2025',
             summary:
@@ -465,8 +465,8 @@ export const portfolioContent: Record<Locale, PortfolioContent> = {
             role: 'Backend Engineer',
             period: 'Aug 2020 - Mar 2021',
             summary:
-              'Разрабатывал IoT security services для Дубая: интеграция физических датчиков с Dubai Police law-enforcement APIs через SIA protocol и AWS deployments.',
-            stack: 'Node.js / Express.js / MySQL / MariaDB / AWS / IoT Sensors'
+              'Разрабатывал IoT security services для Дубая: интеграция физических датчиков с Dubai Police law-enforcement APIs через SIA protocol и AWS deployments. Apache Kafka была основной шиной платформы: разрабатывал Node.js producers/consumers для потоковой обработки событий от датчиков и сигнализаций.',
+            stack: 'Node.js / Express.js / Apache Kafka / MySQL / MariaDB / AWS / IoT Sensors'
           }
         ]
       },
